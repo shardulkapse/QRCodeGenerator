@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Code</title>
+  </head>
+  <body>
+    <div class="title">
+      <h1>QR Code Generator 🔥</h1>
+      <h2>Insert a link bellow to generate a QR Code</h2>
+    </div>
+    <form action="/" method="POST">
+      <input type="text" name="link" />
+      <button type="submit">Generate</button>
+    </form>
+    {% if data%}
+    <div class="generated">
+      <img src="{{data}}" alt="" />
+      <p>Here is the QR code generated for you</p>
+    </div>
+    {% endif %}
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html,
+  body {
+    margin: 0rem 10rem;
+  }
+  .title {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    color: rbg(37, 37, 37);
+  }
+  form {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+  form input {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    width: 100%;
+    background: black;
+    color: white;
+    border: none;
+    outline: none;
+  }
+  form button {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    border: none;
+    color: white;
+    background: rgb(41, 64, 121);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    outline: none;
+  }
+  .generated {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+</style>
